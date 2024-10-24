@@ -1,0 +1,27 @@
+{
+  "name": "test-fronts",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "dependencies": {
+    "axios": "^0.21.1",
+    "vue": "^3.5.*"
+  },
+  "scripts": {
+    "build:all": "npm run build --workspace=apps/app1 && npm run build --workspace=apps/app2",
+    "dev:app1": "npm run dev --workspace=apps/app1",
+    "dev:app2": "npm run dev --workspace=apps/app2",
+    "dev:all": "npm-run-all --parallel dev:app1 dev:app2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "sass-embedded": "^1.80.4"
+  }
+}
